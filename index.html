@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafio 2 Js Jose Luque</title>
+    <link rel="stylesheet" href="./asset/css/style.css" />
+  </head>
+  <body>
+    <div class="principal-container">
+      <div class="header">
+        <h1>Actividades desafio Latam: JavaScript/Modulo 2</h1>
+      </div>
+      <div class="activity1">
+        <p class="title">Actividad 1</p>
+        <button
+          class="btn1"
+          onclick="
+            const changeBorder = document.querySelector('#cat')
+            if (changeBorder.style.border=='') {
+                changeBorder.style.border='2px solid red'
+            }
+            else{
+                changeBorder.style.border=''
+            }
+            "
+        >
+          <img id="cat" src="./asset/img/img1.jpg" alt="computadora kawaii" />
+        </button>
+      </div>
+      <div class="activity2">
+        <p class="title">Actividad 2</p>
+        <p>Selecciona un máximo de <em>10 stickers</em> gratis en total</p>
+        <div class="select">
+          <div class="card1">
+            <img class="cat1" src="./asset/img/gato1.jpg" alt="gato kawai1" />
+            <input id="sticker1" type="number" min="1" max="10" />
+          </div>
+          <div class="card2">
+            <img class="cat2" src="./asset/img/gato2.jpg" alt="gato kawai2" />
+            <input id="sticker2" type="number" min="1" max="10" />
+          </div>
+          <div class="card3">
+            <img class="cat3" src="./asset/img/gato3.jpg" alt="gato kawai3" />
+            <input id="sticker3" type="number" min="1" max="10" />
+          </div>
+        </div>
+        <p id="total-stikers"></p>
+        <button
+          class="btn2"
+          onclick="
+            const value1 = document.querySelector('#sticker1').value
+            const value2 = document.querySelector('#sticker2').value
+            const value3 = document.querySelector('#sticker3').value
+            let totalStikers = Number(value1) + Number(value2) + Number(value3)
+            if (totalStikers > 10) {
+                par = document.querySelector('#total-stikers');
+                par.innerHTML = 'Llevas Muchos stikers, deben ser en total 10.'
+            }
+            else {
+                par = document.querySelector('#total-stikers');
+                par.innerHTML = 'Llevas un total de ' + totalStikers + ' stikers.'
+            }
+            "
+        >
+          Verificar
+        </button>
+      </div>
+      <div class="activity3">
+        <p class="title">Actividad 3</p>
+        <p><em>Ingresar la Contraseña</em></p>
+        <div class="passaword">
+          <div>
+            <select name="number1" id="box1">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          </div>
+          <div>
+            <select name="number2" id="box2">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          </div>
+          <div>
+            <select name="number3" id="box3">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          </div>
+        </div>
+        <p id="success"></p>
+        <button
+          class="btn3"
+          onclick="
+            const number1 = document.querySelector('#box1').value
+            const number2 = document.querySelector('#box2').value
+            const number3 = document.querySelector('#box3').value
+            const passaword1 = `${number1}${number2}${number3}`
+            const passaword2 = `${number1}${number2}${number3}`
+            if (passaword1 == '911') {
+                parr = document.querySelector('#success')
+                parr.innerHTML = 'Password 1 correcto.'
+            }
+            else if (passaword2 == '714') {
+                parr = document.querySelector('#success')
+                parr.innerHTML = 'Password 2 correcto.'
+            }
+            else {
+                parr = document.querySelector('#success')
+                parr.innerHTML = 'Password Iconrrecto.'
+            }
+            "
+        >
+          Ingresar
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
